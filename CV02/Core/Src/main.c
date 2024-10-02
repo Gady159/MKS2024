@@ -61,46 +61,52 @@ static void MX_USART2_UART_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 volatile uint32_t Tick;
-uint32_t off_time = 0;
-uint32_t new_s2;
-uint32_t old_s2;
+
 
 void blink(void)
+{
+	static uint32_t delay;
+	if (Tick > delay + LED_TIME_BLINK)
 	{
-		static uint32_t delay;
-
-		if (Tick > delay + LED_TIME_BLINK)
-		{
-			LL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
-			delay = Tick;
-		}
+		LL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
+		delay = Tick;
 	}
+}
 
 void button(void)
+{
+	static uint32_t delay2;
+	static uint32_t off_time;
+	if (Tick > delay2 + LED_TIME_40MS)
 	{
-		static uint32_t delay2;
-
-		if (Tick > delay2 + LED_TIME_40MS)
-			{
-				new_s2 = LL_GPIO_IsInputPinSet(S2_GPIO_Port, S2_Pin);
-				delay2 = Tick;
-
-				if (old_s2 && !new_s2)
-					{
-						off_time = Tick + LED_TIME_100MS;
-						LL_GPIO_SetOutputPin(LED2_GPIO_Port, LED2_Pin);
-					}
-				old_s2 = new_s2;
-			}
-
-		if (Tick > off_time)
+		static uint32_t old_s2;
+		static uint32_t old_s1;
+		uint32_t new_s2 = LL_GPIO_IsInputPinSet(S2_GPIO_Port, S2_Pin);
+		uint32_t new_s1 = LL_GPIO_IsInputPinSet(S1_GPIO_Port, S1_Pin);
+		if (old_s2 && !new_s2)
 		{
-			LL_GPIO_ResetOutputPin(LED2_GPIO_Port, LED2_Pin);
+			off_time = Tick + LED_TIME_100MS;
+			LL_GPIO_SetOutputPin(LED2_GPIO_Port, LED2_Pin);
 		}
-
-//funkce bude testovat jestli došlo ke změně stavu tlačítka, bude testováno každých 40 ms, pokud bude zjištěna změna že tlačítko bylo stisknuté
-//a není aktuálně stisknuté
+		if (old_s1 && !new_s1)
+		{
+			off_time = Tick + LED_TIME_1000MS;
+			LL_GPIO_SetOutputPin(LED2_GPIO_Port, LED2_Pin);
+		}
+		old_s1 = new_s1;
+		old_s2 = new_s2;
+		delay2 = Tick;
 	}
+
+	if (Tick > off_time)
+	{
+		LL_GPIO_ResetOutputPin(LED2_GPIO_Port, LED2_Pin);
+	}
+
+
+	//funkce bude testovat jestli došlo ke změně stavu tlačítka, bude testováno každých 40 ms, pokud bude zjištěna změna že tlačítko bylo stisknuté
+	//a není aktuálně stisknuté
+}
 /* USER CODE END 0 */
 
 /**
