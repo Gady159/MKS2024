@@ -1,0 +1,15 @@
+/*
+ * sct.h
+ *
+ *  Created on: Oct 9, 2024
+ *      Author: 240612
+ */
+
+#include "main.h"
+
+#ifndef SRC_SCT_H_
+#define SRC_SCT_H_
+
+
+
+#endif /* SRC_SCT_H_ */

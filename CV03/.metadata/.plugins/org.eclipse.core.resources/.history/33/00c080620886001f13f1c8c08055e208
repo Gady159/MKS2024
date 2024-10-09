@@ -1,0 +1,19 @@
+
+// * sct.c
+
+#include main.h
+
+void sct_init(void){
+
+
+
+}
+
+void sct_led(uint32_t value)
+
+
+// *  Created on: Oct 9, 2024
+// *      Author: 240612
+
+
+
