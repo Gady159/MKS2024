@@ -142,7 +142,6 @@ int main(void)
 		state = SHOW_VOLT;
 		delay = HAL_GetTick();
 	}
-
 	if(HAL_GPIO_ReadPin(S2_GPIO_Port, S2_Pin) == 0)
 	{
 		state = SHOW_TEMP;
@@ -152,7 +151,6 @@ int main(void)
 	{
 		state = SHOW_POT;
 	}
-
 
 
 	switch(state)
@@ -168,16 +166,8 @@ int main(void)
 		case SHOW_TEMP:
 			sct_value(temperature, 0);
 			break;
-
-
-
-//		default:
-//			sct_value(rescaled_pot, bargraph_leds);
-//			HAL_Delay(50);
-//			state = 0;
 	}
 	HAL_Delay(50);
-
   }
   /* USER CODE END 3 */
 }
@@ -394,12 +384,10 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef * hadc)
 		avg_pot -= raw_pot;
 		avg_pot += HAL_ADC_GetValue(hadc);
 	}
-
 	else if(channel == 1)
 	{
 		raw_temp = HAL_ADC_GetValue(hadc);
 	}
-
 	else
 	{
 		raw_volt = HAL_ADC_GetValue(hadc);
