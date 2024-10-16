@@ -446,3 +446,566 @@ Finished building: default.size.stdout
  
 Finished building: CV04.list
  
+09:32:29 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/sct.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sct.d" -MT"Core/Src/sct.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sct.o"
+arm-none-eabi-gcc "../Core/Src/stm32f0xx_hal_msp.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f0xx_hal_msp.d" -MT"Core/Src/stm32f0xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f0xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f0xx_it.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f0xx_it.d" -MT"Core/Src/stm32f0xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f0xx_it.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:115:9: error: 'rescaled_pot' undeclared (first use in this function)
+  115 |         rescaled_pot = (raw_pot * 501) / 4096;
+      |         ^~~~~~~~~~~~
+../Core/Src/main.c:115:9: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:115:25: error: 'raw_pot' undeclared (first use in this function)
+  115 |         rescaled_pot = (raw_pot * 501) / 4096;
+      |                         ^~~~~~~
+../Core/Src/main.c:116:9: error: 'bargraph_leds' undeclared (first use in this function)
+  116 |         bargraph_leds = (raw_pot * 9) / 4096;
+      |         ^~~~~~~~~~~~~
+../Core/Src/main.c: In function 'HAL_ADC_ConvCpltCallback':
+../Core/Src/main.c:313:9: error: 'raw_pot' undeclared (first use in this function)
+  313 |         raw_pot = avg_pot >> ADC_Q;
+      |         ^~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+09:38:59 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:118:25: error: 'raw_pot' undeclared (first use in this function)
+  118 |         rescaled_pot = (raw_pot * 501) / 4096;
+      |                         ^~~~~~~
+../Core/Src/main.c:118:25: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'HAL_ADC_ConvCpltCallback':
+../Core/Src/main.c:316:9: error: 'raw_pot' undeclared (first use in this function)
+  316 |         raw_pot = avg_pot >> ADC_Q;
+      |         ^~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+09:39:14 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:118:25: error: 'raw_pot' undeclared (first use in this function)
+  118 |         rescaled_pot = (raw_pot * 501) / 4096;
+      |                         ^~~~~~~
+../Core/Src/main.c:118:25: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'HAL_ADC_ConvCpltCallback':
+../Core/Src/main.c:316:9: error: 'raw_pot' undeclared (first use in this function)
+  316 |         raw_pot = avg_pot >> ADC_Q;
+      |         ^~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+09:39:30 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "CV04.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\CV04\CV04\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CV04.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CV04.elf
+ 
+arm-none-eabi-size  CV04.elf 
+arm-none-eabi-objdump -h -S CV04.elf  > "CV04.list"
+   text	   data	    bss	    dec	    hex	filename
+  10764	     12	   1788	  12564	   3114	CV04.elf
+Finished building: default.size.stdout
+ 
+Finished building: CV04.list
+ 
+10:05:10 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:131:47: error: 'raw_volt' undeclared (first use in this function); did you mean 'raw_pot'?
+  131 |         voltage = 330 * (*VREFINT_CAL_ADDR) / raw_volt;
+      |                                               ^~~~~~~~
+      |                                               raw_pot
+../Core/Src/main.c:131:47: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:133:24: error: 'raw_temp' undeclared (first use in this function)
+  133 |         temperature = (raw_temp - (int32_t)(*TEMP30_CAL_ADDR));
+      |                        ^~~~~~~~
+../Core/Src/main.c:144:9: warning: implicit declaration of function 'swith' [-Wimplicit-function-declaration]
+  144 |         swith(state)
+      |         ^~~~~
+../Core/Src/main.c:144:21: error: expected ';' before '{' token
+  144 |         swith(state)
+      |                     ^
+      |                     ;
+  145 |         {
+      |         ~            
+../Core/Src/main.c:127:34: warning: variable 'voltage' set but not used [-Wunused-but-set-variable]
+  127 |         static volatile uint32_t voltage;
+      |                                  ^~~~~~~
+../Core/Src/main.c: In function 'HAL_ADC_ConvCpltCallback':
+../Core/Src/main.c:372:13: error: 'cahnnel' undeclared (first use in this function); did you mean 'channel'?
+  372 |         if (cahnnel == 0)
+      |             ^~~~~~~
+      |             channel
+../Core/Src/main.c:381:17: error: 'raw_temp' undeclared (first use in this function)
+  381 |                 raw_temp = HAL_ADC_GetValue(hadc);
+      |                 ^~~~~~~~
+../Core/Src/main.c:386:17: error: 'raw_volt' undeclared (first use in this function); did you mean 'raw_pot'?
+  386 |                 raw_volt = HAL_ADC_GetValue(hadc);
+      |                 ^~~~~~~~
+      |                 raw_pot
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+10:05:34 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:131:47: error: 'raw_volt' undeclared (first use in this function); did you mean 'raw_pot'?
+  131 |         voltage = 330 * (*VREFINT_CAL_ADDR) / raw_volt;
+      |                                               ^~~~~~~~
+      |                                               raw_pot
+../Core/Src/main.c:131:47: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:133:24: error: 'raw_temp' undeclared (first use in this function)
+  133 |         temperature = (raw_temp - (int32_t)(*TEMP30_CAL_ADDR));
+      |                        ^~~~~~~~
+../Core/Src/main.c:144:9: warning: implicit declaration of function 'swith' [-Wimplicit-function-declaration]
+  144 |         swith(state)
+      |         ^~~~~
+../Core/Src/main.c:144:21: error: expected ';' before '{' token
+  144 |         swith(state)
+      |                     ^
+      |                     ;
+  145 |         {
+      |         ~            
+../Core/Src/main.c:127:34: warning: variable 'voltage' set but not used [-Wunused-but-set-variable]
+  127 |         static volatile uint32_t voltage;
+      |                                  ^~~~~~~
+../Core/Src/main.c: In function 'HAL_ADC_ConvCpltCallback':
+../Core/Src/main.c:370:13: error: 'cahnnel' undeclared (first use in this function); did you mean 'channel'?
+  370 |         if (cahnnel == 0)
+      |             ^~~~~~~
+      |             channel
+../Core/Src/main.c:379:17: error: 'raw_temp' undeclared (first use in this function)
+  379 |                 raw_temp = HAL_ADC_GetValue(hadc);
+      |                 ^~~~~~~~
+../Core/Src/main.c:384:17: error: 'raw_volt' undeclared (first use in this function); did you mean 'raw_pot'?
+  384 |                 raw_volt = HAL_ADC_GetValue(hadc);
+      |                 ^~~~~~~~
+      |                 raw_pot
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+10:06:34 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:146:9: warning: implicit declaration of function 'swith' [-Wimplicit-function-declaration]
+  146 |         swith(state)
+      |         ^~~~~
+../Core/Src/main.c:146:21: error: expected ';' before '{' token
+  146 |         swith(state)
+      |                     ^
+      |                     ;
+  147 |         {
+      |         ~            
+../Core/Src/main.c:129:34: warning: variable 'voltage' set but not used [-Wunused-but-set-variable]
+  129 |         static volatile uint32_t voltage;
+      |                                  ^~~~~~~
+../Core/Src/main.c: In function 'HAL_ADC_ConvCpltCallback':
+../Core/Src/main.c:372:13: error: 'cahnnel' undeclared (first use in this function); did you mean 'channel'?
+  372 |         if (cahnnel == 0)
+      |             ^~~~~~~
+      |             channel
+../Core/Src/main.c:372:13: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+10:06:46 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:146:9: warning: implicit declaration of function 'swith' [-Wimplicit-function-declaration]
+  146 |         swith(state)
+      |         ^~~~~
+../Core/Src/main.c:146:21: error: expected ';' before '{' token
+  146 |         swith(state)
+      |                     ^
+      |                     ;
+  147 |         {
+      |         ~            
+../Core/Src/main.c:129:34: warning: variable 'voltage' set but not used [-Wunused-but-set-variable]
+  129 |         static volatile uint32_t voltage;
+      |                                  ^~~~~~~
+../Core/Src/main.c: In function 'HAL_ADC_ConvCpltCallback':
+../Core/Src/main.c:372:13: error: 'cahnnel' undeclared (first use in this function); did you mean 'channel'?
+  372 |         if (cahnnel == 0)
+      |             ^~~~~~~
+      |             channel
+../Core/Src/main.c:372:13: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+10:07:09 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:146:9: warning: implicit declaration of function 'swith' [-Wimplicit-function-declaration]
+  146 |         swith(state)
+      |         ^~~~~
+../Core/Src/main.c:146:21: error: expected ';' before '{' token
+  146 |         swith(state)
+      |                     ^
+      |                     ;
+  147 |         {
+      |         ~            
+../Core/Src/main.c:129:34: warning: variable 'voltage' set but not used [-Wunused-but-set-variable]
+  129 |         static volatile uint32_t voltage;
+      |                                  ^~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+10:07:22 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "CV04.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\CV04\CV04\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CV04.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CV04.elf
+ 
+arm-none-eabi-size  CV04.elf 
+arm-none-eabi-objdump -h -S CV04.elf  > "CV04.list"
+   text	   data	    bss	    dec	    hex	filename
+  11660	     12	   1804	  13476	   34a4	CV04.elf
+Finished building: default.size.stdout
+ 
+Finished building: CV04.list
+ 
+10:07:36 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-size  CV04.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11660	     12	   1804	  13476	   34a4	CV04.elf
+Finished building: default.size.stdout
+ 
+10:09:23 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-size  CV04.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11660	     12	   1804	  13476	   34a4	CV04.elf
+Finished building: default.size.stdout
+ 
+10:10:04 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "CV04.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\CV04\CV04\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CV04.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CV04.elf
+ 
+arm-none-eabi-size  CV04.elf 
+arm-none-eabi-objdump -h -S CV04.elf  > "CV04.list"
+   text	   data	    bss	    dec	    hex	filename
+  11660	     12	   1804	  13476	   34a4	CV04.elf
+Finished building: default.size.stdout
+ 
+Finished building: CV04.list
+ 
+10:15:22 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:125:47: error: 'raw_volt' undeclared (first use in this function)
+  125 |         voltage = 330 * (*VREFINT_CAL_ADDR) / raw_volt;
+      |                                               ^~~~~~~~
+../Core/Src/main.c:125:47: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:127:24: error: 'raw_temp' undeclared (first use in this function)
+  127 |         temperature = (raw_temp - (int32_t)(*TEMP30_CAL_ADDR));
+      |                        ^~~~~~~~
+../Core/Src/main.c:132:9: error: 'rescaled_pot' undeclared (first use in this function)
+  132 |         rescaled_pot = (raw_pot * 501) / 4096;
+      |         ^~~~~~~~~~~~
+../Core/Src/main.c:132:25: error: 'raw_pot' undeclared (first use in this function)
+  132 |         rescaled_pot = (raw_pot * 501) / 4096;
+      |                         ^~~~~~~
+../Core/Src/main.c:133:9: error: 'bargraph_leds' undeclared (first use in this function)
+  133 |         bargraph_leds = (raw_pot * 9) / 4096;
+      |         ^~~~~~~~~~~~~
+../Core/Src/main.c: In function 'HAL_ADC_ConvCpltCallback':
+../Core/Src/main.c:379:17: error: 'raw_pot' undeclared (first use in this function)
+  379 |                 raw_pot = avg_pot >> ADC_Q;
+      |                 ^~~~~~~
+../Core/Src/main.c:386:17: error: 'raw_temp' undeclared (first use in this function)
+  386 |                 raw_temp = HAL_ADC_GetValue(hadc);
+      |                 ^~~~~~~~
+../Core/Src/main.c:391:17: error: 'raw_volt' undeclared (first use in this function)
+  391 |                 raw_volt = HAL_ADC_GetValue(hadc);
+      |                 ^~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+10:17:19 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:126:47: error: 'raw_volt' undeclared (first use in this function); did you mean 'raw_pot'?
+  126 |         voltage = 330 * (*VREFINT_CAL_ADDR) / raw_volt;
+      |                                               ^~~~~~~~
+      |                                               raw_pot
+../Core/Src/main.c:126:47: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:128:24: error: 'raw_temp' undeclared (first use in this function)
+  128 |         temperature = (raw_temp - (int32_t)(*TEMP30_CAL_ADDR));
+      |                        ^~~~~~~~
+../Core/Src/main.c:134:9: error: 'bargraph_leds' undeclared (first use in this function)
+  134 |         bargraph_leds = (raw_pot * 9) / 4096;
+      |         ^~~~~~~~~~~~~
+../Core/Src/main.c: In function 'HAL_ADC_ConvCpltCallback':
+../Core/Src/main.c:387:17: error: 'raw_temp' undeclared (first use in this function)
+  387 |                 raw_temp = HAL_ADC_GetValue(hadc);
+      |                 ^~~~~~~~
+../Core/Src/main.c:392:17: error: 'raw_volt' undeclared (first use in this function); did you mean 'raw_pot'?
+  392 |                 raw_volt = HAL_ADC_GetValue(hadc);
+      |                 ^~~~~~~~
+      |                 raw_pot
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+10:17:37 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:136:9: error: 'bargraph_leds' undeclared (first use in this function)
+  136 |         bargraph_leds = (raw_pot * 9) / 4096;
+      |         ^~~~~~~~~~~~~
+../Core/Src/main.c:136:9: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+10:17:55 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "CV04.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\CV04\CV04\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CV04.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CV04.elf
+ 
+arm-none-eabi-size  CV04.elf 
+arm-none-eabi-objdump -h -S CV04.elf  > "CV04.list"
+   text	   data	    bss	    dec	    hex	filename
+  11716	     12	   1804	  13532	   34dc	CV04.elf
+Finished building: default.size.stdout
+ 
+Finished building: CV04.list
+ 
+10:26:03 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:140:23: error: lvalue required as left operand of assignment
+  140 |         HAL_GetTick() = HAL_GetTick()+1;
+      |                       ^
+../Core/Src/main.c:127:34: warning: variable 'time' set but not used [-Wunused-but-set-variable]
+  127 |         static volatile uint32_t time;
+      |                                  ^~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+10:26:47 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:127:34: warning: variable 'time' set but not used [-Wunused-but-set-variable]
+  127 |         static volatile uint32_t time;
+      |                                  ^~~~
+arm-none-eabi-gcc -o "CV04.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\CV04\CV04\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CV04.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CV04.elf
+ 
+arm-none-eabi-size  CV04.elf 
+arm-none-eabi-objdump -h -S CV04.elf  > "CV04.list"
+   text	   data	    bss	    dec	    hex	filename
+  11752	     12	   1812	  13576	   3508	CV04.elf
+Finished building: default.size.stdout
+ 
+Finished building: CV04.list
+ 
+10:40:02 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "CV04.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\CV04\CV04\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CV04.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CV04.elf
+ 
+arm-none-eabi-size  CV04.elf 
+arm-none-eabi-objdump -h -S CV04.elf  > "CV04.list"
+   text	   data	    bss	    dec	    hex	filename
+  11724	     12	   1804	  13540	   34e4	CV04.elf
+Finished building: default.size.stdout
+ 
+Finished building: CV04.list
+ 
+10:40:57 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "CV04.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\CV04\CV04\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CV04.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CV04.elf
+ 
+arm-none-eabi-size  CV04.elf 
+arm-none-eabi-objdump -h -S CV04.elf  > "CV04.list"
+   text	   data	    bss	    dec	    hex	filename
+  11736	     12	   1804	  13552	   34f0	CV04.elf
+Finished building: default.size.stdout
+ 
+Finished building: CV04.list
+ 
+10:41:27 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "CV04.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\CV04\CV04\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CV04.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CV04.elf
+ 
+arm-none-eabi-size  CV04.elf 
+arm-none-eabi-objdump -h -S CV04.elf  > "CV04.list"
+   text	   data	    bss	    dec	    hex	filename
+  11724	     12	   1804	  13540	   34e4	CV04.elf
+Finished building: default.size.stdout
+ 
+Finished building: CV04.list
+ 
+10:43:15 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "CV04.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\CV04\CV04\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CV04.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CV04.elf
+ 
+arm-none-eabi-size  CV04.elf 
+arm-none-eabi-objdump -h -S CV04.elf  > "CV04.list"
+   text	   data	    bss	    dec	    hex	filename
+  11724	     12	   1804	  13540	   34e4	CV04.elf
+Finished building: default.size.stdout
+ 
+Finished building: CV04.list
+ 
+10:46:15 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "CV04.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\CV04\CV04\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CV04.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CV04.elf
+ 
+arm-none-eabi-size  CV04.elf 
+arm-none-eabi-objdump -h -S CV04.elf  > "CV04.list"
+   text	   data	    bss	    dec	    hex	filename
+  11724	     12	   1804	  13540	   34e4	CV04.elf
+Finished building: default.size.stdout
+ 
+Finished building: CV04.list
+ 
+10:46:50 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "CV04.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\CV04\CV04\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CV04.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CV04.elf
+ 
+arm-none-eabi-size  CV04.elf 
+arm-none-eabi-objdump -h -S CV04.elf  > "CV04.list"
+   text	   data	    bss	    dec	    hex	filename
+  11724	     12	   1804	  13540	   34e4	CV04.elf
+Finished building: default.size.stdout
+ 
+Finished building: CV04.list
+ 
+10:47:39 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-size  CV04.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11724	     12	   1804	  13540	   34e4	CV04.elf
+Finished building: default.size.stdout
+ 
+10:53:18 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:143:38: error: expected ';' before '}' token
+  143 |                 delay = HAL_GetTick()
+      |                                      ^
+      |                                      ;
+  144 |         }
+      |         ~                             
+../Core/Src/main.c:149:38: error: expected ';' before '}' token
+  149 |                 delay = HAL_GetTick()
+      |                                      ^
+      |                                      ;
+  150 |         }
+      |         ~                             
+../Core/Src/main.c:164:17: error: duplicate case value
+  164 |                 case SHOW_POT:
+      |                 ^~~~
+../Core/Src/main.c:160:17: note: previously used here
+  160 |                 case SHOW_POT:
+      |                 ^~~~
+../Core/Src/main.c:168:17: error: duplicate case value
+  168 |                 case SHOW_POT:
+      |                 ^~~~
+../Core/Src/main.c:160:17: note: previously used here
+  160 |                 case SHOW_POT:
+      |                 ^~~~
+../Core/Src/main.c:158:9: warning: enumeration value 'SHOW_VOLT' not handled in switch [-Wswitch]
+  158 |         switch(state)
+      |         ^~~~~~
+../Core/Src/main.c:158:9: warning: enumeration value 'SHOW_TEMP' not handled in switch [-Wswitch]
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+10:53:46 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:143:38: error: expected ';' before '}' token
+  143 |                 delay = HAL_GetTick()
+      |                                      ^
+      |                                      ;
+  144 |         }
+      |         ~                             
+../Core/Src/main.c:149:38: error: expected ';' before '}' token
+  149 |                 delay = HAL_GetTick()
+      |                                      ^
+      |                                      ;
+  150 |         }
+      |         ~                             
+../Core/Src/main.c:164:17: error: duplicate case value
+  164 |                 case SHOW_POT:
+      |                 ^~~~
+../Core/Src/main.c:160:17: note: previously used here
+  160 |                 case SHOW_POT:
+      |                 ^~~~
+../Core/Src/main.c:168:17: error: duplicate case value
+  168 |                 case SHOW_POT:
+      |                 ^~~~
+../Core/Src/main.c:160:17: note: previously used here
+  160 |                 case SHOW_POT:
+      |                 ^~~~
+../Core/Src/main.c:158:9: warning: enumeration value 'SHOW_VOLT' not handled in switch [-Wswitch]
+  158 |         switch(state)
+      |         ^~~~~~
+../Core/Src/main.c:158:9: warning: enumeration value 'SHOW_TEMP' not handled in switch [-Wswitch]
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+10:54:14 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:164:17: error: duplicate case value
+  164 |                 case SHOW_POT:
+      |                 ^~~~
+../Core/Src/main.c:160:17: note: previously used here
+  160 |                 case SHOW_POT:
+      |                 ^~~~
+../Core/Src/main.c:168:17: error: duplicate case value
+  168 |                 case SHOW_POT:
+      |                 ^~~~
+../Core/Src/main.c:160:17: note: previously used here
+  160 |                 case SHOW_POT:
+      |                 ^~~~
+../Core/Src/main.c:158:9: warning: enumeration value 'SHOW_VOLT' not handled in switch [-Wswitch]
+  158 |         switch(state)
+      |         ^~~~~~
+../Core/Src/main.c:158:9: warning: enumeration value 'SHOW_TEMP' not handled in switch [-Wswitch]
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+10:54:28 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "CV04.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\CV04\CV04\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CV04.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CV04.elf
+ 
+arm-none-eabi-size  CV04.elf 
+arm-none-eabi-objdump -h -S CV04.elf  > "CV04.list"
+   text	   data	    bss	    dec	    hex	filename
+  11696	     12	   1804	  13512	   34c8	CV04.elf
+Finished building: default.size.stdout
+ 
+Finished building: CV04.list
+ 
+10:54:32 **** Incremental Build of configuration Debug for project CV04 ****
+make -j4 all 
+arm-none-eabi-size  CV04.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11696	     12	   1804	  13512	   34c8	CV04.elf
+Finished building: default.size.stdout
+ 

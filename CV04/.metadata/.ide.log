@@ -1446,3 +1446,38 @@ java.lang.NullPointerException: Cannot invoke "javax.swing.JTextField.getText()"
 2024-10-16 09:29:00,716 [INFO] ProjectBuilder:5097 - Time for Generating toolchain IDE Files: 936mS.
 2024-10-16 09:29:00,717 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 1mS.
 2024-10-16 09:29:00,721 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 0mS.
+2024-10-16 10:14:58,843 [INFO] Gpio:277 - dependency for GPIO [ADC, RCC, SYS, USART2]
+2024-10-16 10:15:06,765 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 462676416 Bytes (822083584)
+2024-10-16 10:15:06,857 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 474004688 Bytes (822083584)
+2024-10-16 10:15:09,581 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 529213032 Bytes (822083584)
+2024-10-16 10:15:09,850 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: ADC
+2024-10-16 10:15:09,851 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2024-10-16 10:15:09,851 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: USART
+2024-10-16 10:15:09,851 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2024-10-16 10:15:09,851 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2024-10-16 10:15:09,851 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2024-10-16 10:15:09,852 [INFO] CodeGenerator:807 - code generatio: config db path: C:\appz\ST\STM32CubeIDE_1.10.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.12.0.202406281431\\db\
+2024-10-16 10:15:09,937 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Temp\240612\MKS2024\CV04\CV04\MXTmpFiles\license.tmp_save
+2024-10-16 10:15:10,033 [INFO] CodeEngine:279 - Generated code: C:\Temp\240612\MKS2024\CV04\CV04\MXTmpFiles\license.tmp
+2024-10-16 10:15:10,082 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Temp\240612\MKS2024\CV04\CV04\MXTmpFiles\gpio.tmp_save
+2024-10-16 10:15:10,168 [INFO] CodeEngine:279 - Generated code: C:\Temp\240612\MKS2024\CV04\CV04\MXTmpFiles\gpio.tmp
+2024-10-16 10:15:10,304 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Temp\240612\MKS2024\CV04\CV04\Core\Src\stm32f0xx_it.c_save
+2024-10-16 10:15:10,487 [INFO] CodeEngine:279 - Generated code: C:\Temp\240612\MKS2024\CV04\CV04\Core\Src\stm32f0xx_it.c
+2024-10-16 10:15:10,499 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Temp\240612\MKS2024\CV04\CV04\Core\Inc\stm32f0xx_it.h_save
+2024-10-16 10:15:10,573 [INFO] CodeEngine:279 - Generated code: C:\Temp\240612\MKS2024\CV04\CV04\Core\Inc\stm32f0xx_it.h
+2024-10-16 10:15:10,590 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Temp\240612\MKS2024\CV04\CV04\Core\Src\stm32f0xx_hal_msp.c_save
+2024-10-16 10:15:10,708 [INFO] CodeEngine:279 - Generated code: C:\Temp\240612\MKS2024\CV04\CV04\Core\Src\stm32f0xx_hal_msp.c
+2024-10-16 10:15:10,713 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Temp\240612\MKS2024\CV04\CV04\MXTmpFiles\system.tmp_save
+2024-10-16 10:15:10,782 [INFO] CodeEngine:279 - Generated code: C:\Temp\240612\MKS2024\CV04\CV04\MXTmpFiles\system.tmp
+2024-10-16 10:15:10,796 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Temp\240612\MKS2024\CV04\CV04\Core\Inc\stm32f0xx_hal_conf.h_save
+2024-10-16 10:15:10,873 [INFO] CodeEngine:335 - Generated code: C:\Temp\240612\MKS2024\CV04\CV04\Core\Inc\stm32f0xx_hal_conf.h
+2024-10-16 10:15:10,895 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Temp\240612\MKS2024\CV04\CV04\Core\Inc\main.h_save
+2024-10-16 10:15:10,987 [INFO] CodeEngine:279 - Generated code: C:\Temp\240612\MKS2024\CV04\CV04\Core\Inc\main.h
+2024-10-16 10:15:10,995 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Temp\240612\MKS2024\CV04\CV04\Core\Src\main.c_save
+2024-10-16 10:15:11,121 [INFO] CodeEngine:279 - Generated code: C:\Temp\240612\MKS2024\CV04\CV04\Core\Src\main.c
+2024-10-16 10:15:11,533 [INFO] ProjectBuilder:3249 - Time for Copy HAL[1] : 212mS.
+2024-10-16 10:15:11,538 [INFO] ProjectBuilder:4828 - Project Generator version: 4.4.0-B60
+2024-10-16 10:15:11,638 [INFO] ConfigFileManager:1531 - The Die is : DIE440
+2024-10-16 10:15:12,595 [INFO] ProjectBuilder:5097 - Time for Generating toolchain IDE Files: 1057mS.
+2024-10-16 10:15:12,597 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 1mS.
+2024-10-16 10:15:12,601 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 0mS.
