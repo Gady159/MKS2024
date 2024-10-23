@@ -23,6 +23,7 @@
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -37,6 +38,7 @@ static uint8_t uart_rx_buf[RX_BUFFER_LEN];
 static volatile uint16_t uart_rx_read_ptr = 0;
 #define uart_rx_write_ptr (RX_BUFFER_LEN - hdma_usart2_rx.Instance->CNDTR)
 #define CMD_BUFFER_LEN 256
+#define EEPROM_ADDR 0xA0
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -73,6 +75,9 @@ void uart_process_command(char* cmd)
 {
 	//printf("received: '%s'\n", cmd);
 
+	uint8_t value;
+	uint16_t addr;
+	uint8_t dump[16];
 	char *token;
 	token = strtok(cmd, " ");
 
@@ -125,9 +130,44 @@ void uart_process_command(char* cmd)
 		}
 		else
 			printf("LED2 OFF\n");
-
 	}
 
+	else if (strcasecmp(token, "READ") == 0)
+	{
+		token = strtok(NULL, " ");
+		addr = atoi(token);
+		HAL_I2C_Mem_Read(&hi2c1, EEPROM_ADDR, addr, I2C_MEMADD_SIZE_16BIT, &value, 1, 1000);
+		printf("Read 0x000%x = 0x%x\n",addr,value);
+		printf("OK\n");
+	}
+
+	else if (strcasecmp(token, "WRITE") == 0)
+	{
+		token = strtok(NULL, " ");
+		addr = atoi(token);
+		token = strtok(NULL, " ");
+		value = atoi(token);
+		HAL_I2C_Mem_Write(&hi2c1, EEPROM_ADDR, addr, I2C_MEMADD_SIZE_16BIT, &value, 1, 1000);
+		while (HAL_I2C_IsDeviceReady(&hi2c1, EEPROM_ADDR, 300, 1000) == HAL_TIMEOUT) {}
+
+		printf("OK\n");
+	}
+
+	else if (strcasecmp(token, "DUMP") == 0)
+	{
+		HAL_I2C_Mem_Read(&hi2c1, EEPROM_ADDR, 0, I2C_MEMADD_SIZE_16BIT, dump, 16, 1000);
+		for(uint8_t i = 0; i < 16; i++){
+			printf("%02x ",dump[i]);
+			if (i == 7)
+			{
+				printf("\n");
+			}
+			else if (i == 15)
+			{
+				printf("\n");
+			}
+		}
+	}
 }
 
 int _write(int file, char const *buf, int n)
