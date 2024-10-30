@@ -1,0 +1,27 @@
+
+
+
+clear
+close all
+
+ntc = csvread('ntc.csv');
+t = ntc(:,1);
+ad = ntc(:,2);
+ADC = 1024.*(ad./(ad+10));
+
+p = polyfit(ADC, t, 10);
+ad2 = 1024.*ad./(ad + 1e4);
+t2 = round(polyval(p, ad2), 1);
+
+figure(1)
+plot(t, ad,'bo');
+hold on
+plot(ad2, t2, 'r')
+xlim([0 300])
+xlim([-50 250])
+
+figure(2)
+plot(ADC,t)
+
+
+
