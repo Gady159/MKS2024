@@ -1,0 +1,8 @@
+../Core/Src/main.c:58:5:Random1to6	1
+../Core/Src/main.c:63:5:Random3	1
+../Core/Src/main.c:85:5:main	4
+../Core/Src/main.c:160:6:SystemClock_Config	3
+../Core/Src/main.c:201:13:MX_ADC_Init	3
+../Core/Src/main.c:255:13:MX_USART2_UART_Init	2
+../Core/Src/main.c:290:13:MX_GPIO_Init	1
+../Core/Src/main.c:346:6:Error_Handler	1
