@@ -122,6 +122,24 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
+		//uint8_t LedPos = 0b11000000;
+		
+		//for(i = 1, i <= 6; i++)
+		//{
+		//	sct_universal_bargraph(LedPos);
+		//	LedPos >>= 1;
+		//	HAL_Delay(LED_DELAY);
+		//}
+		//
+		//for(i = 1, i <= 6; i++)
+		//{
+		//	sct_universal_bargraph(LedPos);
+		//	LedPos <<= 1;
+		//	HAL_Delay(LED_DELAY);
+		//}
+
+		// -------------------------------------------------- /
+		
 		uint8_t buttonWasPressed = 0;
 		uint16_t randomNumber;
 		uint16_t delayValue = 20;
