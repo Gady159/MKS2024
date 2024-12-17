@@ -1,0 +1,1331 @@
+14:32:02 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:109:35: warning: pointer targets in passing argument 1 of 'OWReadTemperature' differ in signedness [-Wpointer-sign]
+  109 |                 OWReadTemperature(&DS18B20_TEMP);
+      |                                   ^~~~~~~~~~~~~
+      |                                   |
+      |                                   uint16_t * {aka short unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Src/1wire.c:150:36: note: expected 'int16_t *' {aka 'short int *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  150 | uint8_t OWReadTemperature(int16_t *result)
+      |                           ~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWInit':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:18: multiple definition of `OWInit'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:18: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWReset':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:26: multiple definition of `OWReset'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:26: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWWriteBit':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:42: multiple definition of `OWWriteBit'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:42: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWReadBit':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:59: multiple definition of `OWReadBit'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:59: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWWriteByte':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:74: multiple definition of `OWWriteByte'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:74: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWReadByte':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:84: multiple definition of `OWReadByte'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:84: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWSendCmd':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:96: multiple definition of `OWSendCmd'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:96: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWCRC':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:111: multiple definition of `OWCRC'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:111: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWReadRom':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:127: multiple definition of `OWReadRom'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:127: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWConvertAll':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:146: multiple definition of `OWConvertAll'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:146: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWReadTemperature':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:151: multiple definition of `OWReadTemperature'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:151: first defined here
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: Ukol2.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+14:33:04 **** Clean-only build of configuration Debug for project Ukol2 ****
+make -j4 clean 
+rm -rf ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.cyclo ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.d ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.su ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.cyclo ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.d ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.o ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.su ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.cyclo ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.d ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.o ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.su ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.cyclo ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.d ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.o ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.su ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.cyclo ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.d ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.o ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.su ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_exti.cyclo ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_exti.d ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_exti.o ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_exti.su ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.cyclo ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.d ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.o ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.su ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.cyclo ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.d ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.o ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.su ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.cyclo ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.d ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.o ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.su ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.cyclo ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.d ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.o ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.su ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.cyclo ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.d ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.o ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.su ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr.cyclo ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr.d ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr.o ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr.su ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.cyclo ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.d ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.o ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.su ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.cyclo ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.d ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.o ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.su ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.cyclo ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.d ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.o ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.su ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.cyclo ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.d ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.o ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.su ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.cyclo ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.d ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.o ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.su ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.cyclo ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.d ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.o ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.su ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart_ex.cyclo ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart_ex.d ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart_ex.o ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart_ex.su
+rm -rf ./Core/Startup/startup_stm32f030r8tx.d ./Core/Startup/startup_stm32f030r8tx.o
+rm -rf ./Core/Src/1wire.cyclo ./Core/Src/1wire.d ./Core/Src/1wire.o ./Core/Src/1wire.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/sct.cyclo ./Core/Src/sct.d ./Core/Src/sct.o ./Core/Src/sct.su ./Core/Src/stm32f0xx_hal_msp.cyclo ./Core/Src/stm32f0xx_hal_msp.d ./Core/Src/stm32f0xx_hal_msp.o ./Core/Src/stm32f0xx_hal_msp.su ./Core/Src/stm32f0xx_it.cyclo ./Core/Src/stm32f0xx_it.d ./Core/Src/stm32f0xx_it.o ./Core/Src/stm32f0xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f0xx.cyclo ./Core/Src/system_stm32f0xx.d ./Core/Src/system_stm32f0xx.o ./Core/Src/system_stm32f0xx.su
+rm -rf Ukol2.elf Ukol2.list Ukol2.map default.size.stdout
+ 
+14:33:04 **** Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_exti.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_exti.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart_ex.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart_ex.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart_ex.o"
+arm-none-eabi-gcc -mcpu=cortex-m0 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f030r8tx.d" -MT"Core/Startup/startup_stm32f030r8tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Startup/startup_stm32f030r8tx.o" "../Core/Startup/startup_stm32f030r8tx.s"
+arm-none-eabi-gcc "../Core/Src/1wire.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/1wire.d" -MT"Core/Src/1wire.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/1wire.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/sct.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sct.d" -MT"Core/Src/sct.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sct.o"
+arm-none-eabi-gcc "../Core/Src/stm32f0xx_hal_msp.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f0xx_hal_msp.d" -MT"Core/Src/stm32f0xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f0xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f0xx_it.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f0xx_it.d" -MT"Core/Src/stm32f0xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f0xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f0xx.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f0xx.d" -MT"Core/Src/system_stm32f0xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32f0xx.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWInit':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:18: multiple definition of `OWInit'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:18: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWReset':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:26: multiple definition of `OWReset'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:26: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWWriteBit':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:42: multiple definition of `OWWriteBit'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:42: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWReadBit':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:59: multiple definition of `OWReadBit'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:59: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWWriteByte':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:74: multiple definition of `OWWriteByte'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:74: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWReadByte':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:84: multiple definition of `OWReadByte'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:84: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWSendCmd':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:96: multiple definition of `OWSendCmd'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:96: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWCRC':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:111: multiple definition of `OWCRC'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:111: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWReadRom':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:127: multiple definition of `OWReadRom'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:127: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWConvertAll':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:146: multiple definition of `OWConvertAll'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:146: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWReadTemperature':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:151: multiple definition of `OWReadTemperature'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:151: first defined here
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: Ukol2.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+14:33:30 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/1wire.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/1wire.d" -MT"Core/Src/1wire.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/1wire.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWInit':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:18: multiple definition of `OWInit'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:18: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWReset':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:26: multiple definition of `OWReset'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:26: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWWriteBit':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:42: multiple definition of `OWWriteBit'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:42: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWReadBit':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:59: multiple definition of `OWReadBit'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:59: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWWriteByte':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:74: multiple definition of `OWWriteByte'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:74: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWReadByte':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:84: multiple definition of `OWReadByte'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:84: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWSendCmd':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:96: multiple definition of `OWSendCmd'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:96: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWCRC':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:111: multiple definition of `OWCRC'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:111: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWReadRom':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:127: multiple definition of `OWReadRom'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:127: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWConvertAll':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:146: multiple definition of `OWConvertAll'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:146: first defined here
+C:/appz/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `OWReadTemperature':
+C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:151: multiple definition of `OWReadTemperature'; ./Core/Src/1wire.o:C:/Temp/240612/MKS2024/Ukol2/Ukol2/Debug/../Core/Src/1wire.c:151: first defined here
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: Ukol2.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+14:33:51 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+   9980	     12	   1772	  11764	   2df4	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+14:37:10 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  10984	     12	   1772	  12768	   31e0	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+14:37:15 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10984	     12	   1772	  12768	   31e0	Ukol2.elf
+Finished building: default.size.stdout
+ 
+14:37:50 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  10984	     12	   1772	  12768	   31e0	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+14:37:52 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10984	     12	   1772	  12768	   31e0	Ukol2.elf
+Finished building: default.size.stdout
+ 
+14:39:00 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/sct.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sct.d" -MT"Core/Src/sct.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sct.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  10984	     12	   1772	  12768	   31e0	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+14:51:45 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/sct.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sct.d" -MT"Core/Src/sct.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sct.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:115:17: error: too many arguments to function 'sct_value'
+  115 |                 sct_value(DS18B20_temp/10,0,1);
+      |                 ^~~~~~~~~
+In file included from ../Core/Src/main.c:24:
+../Core/Inc/sct.h:16:6: note: declared here
+   16 | void sct_value(uint16_t value, uint8_t led);
+      |      ^~~~~~~~~
+../Core/Src/sct.c:104:6: error: conflicting types for 'sct_value'; have 'void(uint16_t,  uint8_t,  uint8_t)' {aka 'void(short unsigned int,  unsigned char,  unsigned char)'}
+  104 | void sct_value(uint16_t value, uint8_t led, uint8_t decPoint){
+      |      ^~~~~~~~~
+In file included from ../Core/Src/sct.c:5:
+../Core/Inc/sct.h:16:6: note: previous declaration of 'sct_value' with type 'void(uint16_t,  uint8_t)' {aka 'void(short unsigned int,  unsigned char)'}
+   16 | void sct_value(uint16_t value, uint8_t led);
+      |      ^~~~~~~~~
+../Core/Src/sct.c: In function 'sct_value':
+../Core/Src/sct.c:121:37: error: 'i' undeclared (first use in this function)
+  121 |                                 for(i=0; i>10; i++){
+      |                                     ^
+../Core/Src/sct.c:121:37: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Core/Src/subdir.mk:40: Core/Src/sct.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+14:52:14 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/sct.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sct.d" -MT"Core/Src/sct.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sct.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:115:17: error: too many arguments to function 'sct_value'
+  115 |                 sct_value(DS18B20_temp/10,0,1);
+      |                 ^~~~~~~~~
+In file included from ../Core/Src/main.c:24:
+../Core/Inc/sct.h:16:6: note: declared here
+   16 | void sct_value(uint16_t value, uint8_t led);
+      |      ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/sct.c:104:6: error: conflicting types for 'sct_value'; have 'void(uint16_t,  uint8_t,  uint8_t)' {aka 'void(short unsigned int,  unsigned char,  unsigned char)'}
+  104 | void sct_value(uint16_t value, uint8_t led, uint8_t decPoint){
+      |      ^~~~~~~~~
+In file included from ../Core/Src/sct.c:5:
+../Core/Inc/sct.h:16:6: note: previous declaration of 'sct_value' with type 'void(uint16_t,  uint8_t)' {aka 'void(short unsigned int,  unsigned char)'}
+   16 | void sct_value(uint16_t value, uint8_t led);
+      |      ^~~~~~~~~
+../Core/Src/sct.c: In function 'sct_value':
+../Core/Src/sct.c:108:9: error: unknown type name 'uint8t'; did you mean 'uint8_t'?
+  108 |         uint8t i;
+      |         ^~~~~~
+      |         uint8_t
+make: *** [Core/Src/subdir.mk:40: Core/Src/sct.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+14:52:25 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/sct.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sct.d" -MT"Core/Src/sct.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sct.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:115:17: error: too many arguments to function 'sct_value'
+  115 |                 sct_value(DS18B20_temp/10,0,1);
+      |                 ^~~~~~~~~
+In file included from ../Core/Src/main.c:24:
+../Core/Inc/sct.h:16:6: note: declared here
+   16 | void sct_value(uint16_t value, uint8_t led);
+      |      ^~~~~~~~~
+../Core/Src/sct.c:104:6: error: conflicting types for 'sct_value'; have 'void(uint16_t,  uint8_t,  uint8_t)' {aka 'void(short unsigned int,  unsigned char,  unsigned char)'}
+  104 | void sct_value(uint16_t value, uint8_t led, uint8_t decPoint){
+      |      ^~~~~~~~~
+In file included from ../Core/Src/sct.c:5:
+../Core/Inc/sct.h:16:6: note: previous declaration of 'sct_value' with type 'void(uint16_t,  uint8_t)' {aka 'void(short unsigned int,  unsigned char)'}
+   16 | void sct_value(uint16_t value, uint8_t led);
+      |      ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Core/Src/subdir.mk:40: Core/Src/sct.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+14:53:03 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/sct.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sct.d" -MT"Core/Src/sct.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sct.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  11072	     12	   1772	  12856	   3238	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+14:54:43 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/sct.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sct.d" -MT"Core/Src/sct.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sct.o"
+../Core/Src/sct.c: In function 'sct_value':
+../Core/Src/sct.c:108:17: warning: unused variable 'i' [-Wunused-variable]
+  108 |         uint8_t i;
+      |                 ^
+../Core/Src/sct.c:107:18: warning: unused variable 'null' [-Wunused-variable]
+  107 |         uint32_t null = (0b1000000000000000 << 16);
+      |                  ^~~~
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  11068	     12	   1772	  12852	   3234	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+14:55:22 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/sct.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sct.d" -MT"Core/Src/sct.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sct.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  11060	     12	   1772	  12844	   322c	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+14:55:26 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11060	     12	   1772	  12844	   322c	Ukol2.elf
+Finished building: default.size.stdout
+ 
+14:57:00 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/sct.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sct.d" -MT"Core/Src/sct.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sct.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  11060	     12	   1772	  12844	   322c	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+14:57:03 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11060	     12	   1772	  12844	   322c	Ukol2.elf
+Finished building: default.size.stdout
+ 
+14:58:14 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/sct.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sct.d" -MT"Core/Src/sct.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sct.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  11068	     12	   1772	  12852	   3234	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+14:58:26 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11068	     12	   1772	  12852	   3234	Ukol2.elf
+Finished building: default.size.stdout
+ 
+14:59:42 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/sct.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sct.d" -MT"Core/Src/sct.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sct.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  11068	     12	   1772	  12852	   3234	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+14:59:44 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11068	     12	   1772	  12852	   3234	Ukol2.elf
+Finished building: default.size.stdout
+ 
+15:04:49 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:26:
+../Core/Inc/data.dlm:1:1: error: expected identifier or '(' before numeric constant
+    1 | 1689,1669,1649,1630,1611,1593,1575,1558,1540,1524,1507,1491,1475,1460,1445,1430,1415,1401,1387,1373,1360,1347,1334,1322,1309,1297,1285,1274,1263,1251,1241,1230,1220,1209,1199,1190,1180,1171,1161,1152,1144,1135,1126,1118,1110,1102,1094,1086,1079,1071,1064,1057,1050,1043,1036,1030,1023,1017,1011,1005,999,993,987,981,976,970,965,960,954,949,944,939,934,930,925,920,916,911,907,902,898,894,890,886,882,878,874,870,866,862,859,855,851,848,844,841,837,834,831,827,824,821,818,814,811,808,805,802,799,796,793,790,788,785,782,779,776,774,771,768,766,763,760,758,755,753,750,748,745,743,740,738,735,733,731,728,726,723,721,719,717,714,712,710,707,705,703,701,699,696,694,692,690,688,686,684,682,679,677,675,673,671,669,667,665,663,661,659,657,655,653,651,649,647,645,643,641,640,638,636,634,632,630,628,626,625,623,621,619,617,615,614,612,610,608,607,605,603,601,599,598,596,594,593,591,589,587,586,584,582,581,579,577,576,574,573,571,569,568,566,565,563,561,560,558,557,555,554,552,550,549,547,546,544,543,541,540,538,537,536,534,533,531,530,528,527,525,524,523,521,520,518,517,516,514,513,511,510,509,507,506,505,503,502,501,499,498,497,496,494,493,492,490,489,488,487,485,484,483,482,480,479,478,477,475,474,473,472,471,469,468,467,466,465,464,462,461,460,459,458,457,455,454,453,452,451,450,449,448,446,445,444,443,442,441,440,439,438,437,435,434,433,432,431,430,429,428,427,426,425,424,423,422,421,419,418,417,416,415,414,413,412,411,410,409,408,407,406,405,404,403,402,401,400,399,398,397,396,395,394,393,392,391,390,389,388,387,386,385,384,383,382,381,380,379,378,377,376,375,374,373,372,371,370,369,368,367,366,365,364,363,362,361,360,359,358,358,357,356,355,354,353,352,351,350,349,348,347,346,345,344,343,342,341,340,339,338,337,336,335,334,333,332,331,330,330,329,328,327,326,325,324,323,322,321,320,319,318,317,316,315,314,313,312,311,310,309,309,308,307,306,305,304,303,302,301,300,299,298,297,296,295,294,293,293,292,291,290,289,288,287,286,285,284,283,282,281,280,279,279,278,277,276,275,274,273,272,271,270,269,268,268,267,266,265,264,263,262,261,260,259,258,258,257,256,255,254,253,252,251,250,250,249,248,247,246,245,244,243,242,242,241,240,239,238,237,236,235,235,234,233,232,231,230,229,228,228,227,226,225,224,223,222,222,221,220,219,218,217,217,216,215,214,213,212,211,211,210,209,208,207,206,206,205,204,203,202,201,201,200,199,198,197,196,196,195,194,193,192,192,191,190,189,188,187,187,186,185,184,183,182,182,181,180,179,178,178,177,176,175,174,173,173,172,171,170,169,169,168,167,166,165,164,164,163,162,161,160,160,159,158,157,156,155,155,154,153,152,151,151,150,149,148,147,146,146,145,144,143,142,141,141,140,139,138,137,136,135,135,134,133,132,131,130,130,129,128,127,126,125,124,124,123,122,121,120,119,118,117,117,116,115,114,113,112,111,110,110,109,108,107,106,105,104,103,102,102,101,100,99,98,97,96,95,94,93,92,92,91,90,89,88,87,86,85,84,83,82,81,80,79,78,78,77,76,75,74,73,72,71,70,69,68,67,66,65,64,63,62,61,60,59,58,57,56,55,54,53,52,51,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,7,6,5,4,3,2,1,0,-1,-2,-3,-4,-5,-6,-7,-8,-9,-11,-12,-13,-14,-15,-16,-17,-18,-19,-20,-21,-22,-24,-25,-26,-27,-28,-29,-30,-31,-32,-33,-35,-36,-37,-38,-39,-40,-41,-42,-44,-45,-46,-47,-48,-49,-50,-52,-53,-54,-55,-56,-57,-59,-60,-61,-62,-63,-64,-66,-67,-68,-69,-71,-72,-73,-74,-75,-77,-78,-79,-80,-82,-83,-84,-86,-87,-88,-89,-91,-92,-93,-95,-96,-97,-99,-100,-101,-103,-104,-106,-107,-108,-110,-111,-113,-114,-116,-117,-119,-120,-122,-123,-125,-126,-128,-129,-131,-132,-134,-136,-137,-139,-140,-142,-144,-145,-147,-149,-150,-152,-154,-156,-157,-159,-161,-163,-165,-166,-168,-170,-172,-174,-176,-178,-180,-182,-184,-186,-188,-190,-192,-194,-196,-198,-200,-202,-204,-207,-209,-211,-213,-215,-218,-220,-222,-224,-227,-229,-231,-234,-236,-239,-241,-243,-246,-248,-251,-253,-256,-258,-261,-264,-266,-269,-271,-274,-277,-279,-282,-285,-287,-290,-293,-295,-298,-301,-304,-307,-309,-312,-315,-318,-321,-324,-326,-329,-332,-335,-338,-341,-344,-347,-349,-352,-355,-358,-361,-364,-367,-370,-372,-375,-378,-381,-384,-387,-389,-392,-395,-398,-401,-403,-406,-409,-411,-414,-416,-419,-422,-424,-427,-429,-431,-434
+      | ^~~~
+../Core/Src/main.c:50:1: warning: data definition has no type or storage class
+   50 | ntc_data[] = data.dlm;
+      | ^~~~~~~~
+../Core/Src/main.c:50:1: warning: type defaults to 'int' in declaration of 'ntc_data' [-Wimplicit-int]
+../Core/Src/main.c:50:14: error: 'data' undeclared here (not in a function)
+   50 | ntc_data[] = data.dlm;
+      |              ^~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:100:38: error: 'hadc' undeclared (first use in this function)
+  100 |         HAL_ADCEx_Calibration_Start(&hadc);
+      |                                      ^~~~
+../Core/Src/main.c:100:38: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'MX_ADC_Init':
+../Core/Src/main.c:183:9: error: 'hadc' undeclared (first use in this function)
+  183 |         hadc.Instance = ADC1;
+      |         ^~~~
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:07:28 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:26:
+../Core/Inc/data.dlm:1:1: error: expected identifier or '(' before numeric constant
+    1 | 1689,1669,1649,1630,1611,1593,1575,1558,1540,1524,1507,1491,1475,1460,1445,1430,1415,1401,1387,1373,1360,1347,1334,1322,1309,1297,1285,1274,1263,1251,1241,1230,1220,1209,1199,1190,1180,1171,1161,1152,1144,1135,1126,1118,1110,1102,1094,1086,1079,1071,1064,1057,1050,1043,1036,1030,1023,1017,1011,1005,999,993,987,981,976,970,965,960,954,949,944,939,934,930,925,920,916,911,907,902,898,894,890,886,882,878,874,870,866,862,859,855,851,848,844,841,837,834,831,827,824,821,818,814,811,808,805,802,799,796,793,790,788,785,782,779,776,774,771,768,766,763,760,758,755,753,750,748,745,743,740,738,735,733,731,728,726,723,721,719,717,714,712,710,707,705,703,701,699,696,694,692,690,688,686,684,682,679,677,675,673,671,669,667,665,663,661,659,657,655,653,651,649,647,645,643,641,640,638,636,634,632,630,628,626,625,623,621,619,617,615,614,612,610,608,607,605,603,601,599,598,596,594,593,591,589,587,586,584,582,581,579,577,576,574,573,571,569,568,566,565,563,561,560,558,557,555,554,552,550,549,547,546,544,543,541,540,538,537,536,534,533,531,530,528,527,525,524,523,521,520,518,517,516,514,513,511,510,509,507,506,505,503,502,501,499,498,497,496,494,493,492,490,489,488,487,485,484,483,482,480,479,478,477,475,474,473,472,471,469,468,467,466,465,464,462,461,460,459,458,457,455,454,453,452,451,450,449,448,446,445,444,443,442,441,440,439,438,437,435,434,433,432,431,430,429,428,427,426,425,424,423,422,421,419,418,417,416,415,414,413,412,411,410,409,408,407,406,405,404,403,402,401,400,399,398,397,396,395,394,393,392,391,390,389,388,387,386,385,384,383,382,381,380,379,378,377,376,375,374,373,372,371,370,369,368,367,366,365,364,363,362,361,360,359,358,358,357,356,355,354,353,352,351,350,349,348,347,346,345,344,343,342,341,340,339,338,337,336,335,334,333,332,331,330,330,329,328,327,326,325,324,323,322,321,320,319,318,317,316,315,314,313,312,311,310,309,309,308,307,306,305,304,303,302,301,300,299,298,297,296,295,294,293,293,292,291,290,289,288,287,286,285,284,283,282,281,280,279,279,278,277,276,275,274,273,272,271,270,269,268,268,267,266,265,264,263,262,261,260,259,258,258,257,256,255,254,253,252,251,250,250,249,248,247,246,245,244,243,242,242,241,240,239,238,237,236,235,235,234,233,232,231,230,229,228,228,227,226,225,224,223,222,222,221,220,219,218,217,217,216,215,214,213,212,211,211,210,209,208,207,206,206,205,204,203,202,201,201,200,199,198,197,196,196,195,194,193,192,192,191,190,189,188,187,187,186,185,184,183,182,182,181,180,179,178,178,177,176,175,174,173,173,172,171,170,169,169,168,167,166,165,164,164,163,162,161,160,160,159,158,157,156,155,155,154,153,152,151,151,150,149,148,147,146,146,145,144,143,142,141,141,140,139,138,137,136,135,135,134,133,132,131,130,130,129,128,127,126,125,124,124,123,122,121,120,119,118,117,117,116,115,114,113,112,111,110,110,109,108,107,106,105,104,103,102,102,101,100,99,98,97,96,95,94,93,92,92,91,90,89,88,87,86,85,84,83,82,81,80,79,78,78,77,76,75,74,73,72,71,70,69,68,67,66,65,64,63,62,61,60,59,58,57,56,55,54,53,52,51,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,7,6,5,4,3,2,1,0,-1,-2,-3,-4,-5,-6,-7,-8,-9,-11,-12,-13,-14,-15,-16,-17,-18,-19,-20,-21,-22,-24,-25,-26,-27,-28,-29,-30,-31,-32,-33,-35,-36,-37,-38,-39,-40,-41,-42,-44,-45,-46,-47,-48,-49,-50,-52,-53,-54,-55,-56,-57,-59,-60,-61,-62,-63,-64,-66,-67,-68,-69,-71,-72,-73,-74,-75,-77,-78,-79,-80,-82,-83,-84,-86,-87,-88,-89,-91,-92,-93,-95,-96,-97,-99,-100,-101,-103,-104,-106,-107,-108,-110,-111,-113,-114,-116,-117,-119,-120,-122,-123,-125,-126,-128,-129,-131,-132,-134,-136,-137,-139,-140,-142,-144,-145,-147,-149,-150,-152,-154,-156,-157,-159,-161,-163,-165,-166,-168,-170,-172,-174,-176,-178,-180,-182,-184,-186,-188,-190,-192,-194,-196,-198,-200,-202,-204,-207,-209,-211,-213,-215,-218,-220,-222,-224,-227,-229,-231,-234,-236,-239,-241,-243,-246,-248,-251,-253,-256,-258,-261,-264,-266,-269,-271,-274,-277,-279,-282,-285,-287,-290,-293,-295,-298,-301,-304,-307,-309,-312,-315,-318,-321,-324,-326,-329,-332,-335,-338,-341,-344,-347,-349,-352,-355,-358,-361,-364,-367,-370,-372,-375,-378,-381,-384,-387,-389,-392,-395,-398,-401,-403,-406,-409,-411,-414,-416,-419,-422,-424,-427,-429,-431,-434
+      | ^~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:100:38: error: 'hadc' undeclared (first use in this function)
+  100 |         HAL_ADCEx_Calibration_Start(&hadc);
+      |                                      ^~~~
+../Core/Src/main.c:100:38: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:112:38: warning: unused variable 'ntc_lookup' [-Wunused-variable]
+  112 |                 static const int16_t ntc_lookup[] = {
+      |                                      ^~~~~~~~~~
+../Core/Src/main.c: In function 'MX_ADC_Init':
+../Core/Src/main.c:188:9: error: 'hadc' undeclared (first use in this function)
+  188 |         hadc.Instance = ADC1;
+      |         ^~~~
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:08:43 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:113:38: warning: unused variable 'ntc_lookup' [-Wunused-variable]
+  113 |                 static const int16_t ntc_lookup[] = {
+      |                                      ^~~~~~~~~~
+../Core/Src/main.c:112:33: warning: unused variable 'ADC_READ' [-Wunused-variable]
+  112 |                 static uint32_t ADC_READ;
+      |                                 ^~~~~~~~
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  11876	     12	   1772	  13660	   355c	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+15:13:42 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  13496	     12	   1772	  15280	   3bb0	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+15:13:58 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13496	     12	   1772	  15280	   3bb0	Ukol2.elf
+Finished building: default.size.stdout
+ 
+15:33:06 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:122:57: error: 'DS12B20' undeclared (first use in this function); did you mean 'DS18B20'?
+  122 |                 static enum {DS18B20, NTC, POT} state = DS12B20;
+      |                                                         ^~~~~~~
+      |                                                         DS18B20
+../Core/Src/main.c:122:57: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:35:06 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14152	     12	   1780	  15944	   3e48	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+15:35:10 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14152	     12	   1780	  15944	   3e48	Ukol2.elf
+Finished building: default.size.stdout
+ 
+15:36:18 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14160	     12	   1780	  15952	   3e50	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+15:37:08 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14160	     12	   1780	  15952	   3e50	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+15:37:13 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14160	     12	   1780	  15952	   3e50	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+15:37:19 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14160	     12	   1780	  15952	   3e50	Ukol2.elf
+Finished building: default.size.stdout
+ 
+15:37:38 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14160	     12	   1780	  15952	   3e50	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+15:37:40 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14160	     12	   1780	  15952	   3e50	Ukol2.elf
+Finished building: default.size.stdout
+ 
+15:38:50 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14160	     12	   1780	  15952	   3e50	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+15:38:52 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14160	     12	   1780	  15952	   3e50	Ukol2.elf
+Finished building: default.size.stdout
+ 
+15:42:11 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14216	     12	   1780	  16008	   3e88	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+15:42:15 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14216	     12	   1780	  16008	   3e88	Ukol2.elf
+Finished building: default.size.stdout
+ 
+15:42:59 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14220	     12	   1780	  16012	   3e8c	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+15:43:02 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14220	     12	   1780	  16012	   3e8c	Ukol2.elf
+Finished building: default.size.stdout
+ 
+15:45:32 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:130:55: error: expected ';' before 'break'
+  130 |                         sct_value(DS18B20_temp/10,0,2)
+      |                                                       ^
+      |                                                       ;
+  131 |                         break;
+      |                         ~~~~~                          
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:46:29 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14216	     12	   1780	  16008	   3e88	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+15:46:32 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14216	     12	   1780	  16008	   3e88	Ukol2.elf
+Finished building: default.size.stdout
+ 
+15:47:48 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14216	     12	   1780	  16008	   3e88	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+15:47:49 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14216	     12	   1780	  16008	   3e88	Ukol2.elf
+Finished building: default.size.stdout
+ 
+15:49:24 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14216	     12	   1780	  16008	   3e88	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+15:49:26 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14216	     12	   1780	  16008	   3e88	Ukol2.elf
+Finished building: default.size.stdout
+ 
+15:51:20 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14224	     12	   1780	  16016	   3e90	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+15:51:22 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14224	     12	   1780	  16016	   3e90	Ukol2.elf
+Finished building: default.size.stdout
+ 
+15:51:46 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14224	     12	   1780	  16016	   3e90	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+15:51:49 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14224	     12	   1780	  16016	   3e90	Ukol2.elf
+Finished building: default.size.stdout
+ 
+15:53:10 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14136	     12	   1780	  15928	   3e38	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+15:54:19 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14136	     12	   1780	  15928	   3e38	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+15:54:23 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14136	     12	   1780	  15928	   3e38	Ukol2.elf
+Finished building: default.size.stdout
+ 
+15:56:52 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14188	     12	   1780	  15980	   3e6c	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+15:57:01 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14184	     12	   1780	  15976	   3e68	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+15:57:03 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14184	     12	   1780	  15976	   3e68	Ukol2.elf
+Finished building: default.size.stdout
+ 
+15:57:37 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14196	     12	   1780	  15988	   3e74	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+15:57:40 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14196	     12	   1780	  15988	   3e74	Ukol2.elf
+Finished building: default.size.stdout
+ 
+15:59:21 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14192	     12	   1780	  15984	   3e70	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+15:59:22 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14192	     12	   1780	  15984	   3e70	Ukol2.elf
+Finished building: default.size.stdout
+ 
+16:00:41 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14240	     12	   1780	  16032	   3ea0	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+16:00:44 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14240	     12	   1780	  16032	   3ea0	Ukol2.elf
+Finished building: default.size.stdout
+ 
+16:01:27 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14224	     12	   1780	  16016	   3e90	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+16:01:30 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14224	     12	   1780	  16016	   3e90	Ukol2.elf
+Finished building: default.size.stdout
+ 
+16:03:50 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14224	     12	   1780	  16016	   3e90	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+16:03:54 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14224	     12	   1780	  16016	   3e90	Ukol2.elf
+Finished building: default.size.stdout
+ 
+16:08:22 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f0xx_hal_msp.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f0xx_hal_msp.d" -MT"Core/Src/stm32f0xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f0xx_hal_msp.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14248	     12	   1780	  16040	   3ea8	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+16:09:05 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14248	     12	   1780	  16040	   3ea8	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+16:09:07 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14248	     12	   1780	  16040	   3ea8	Ukol2.elf
+Finished building: default.size.stdout
+ 
+16:11:01 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f0xx_hal_msp.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f0xx_hal_msp.d" -MT"Core/Src/stm32f0xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f0xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f0xx_it.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f0xx_it.d" -MT"Core/Src/stm32f0xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f0xx_it.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14752	     12	   1780	  16544	   40a0	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+16:11:03 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14752	     12	   1780	  16544	   40a0	Ukol2.elf
+Finished building: default.size.stdout
+ 
+16:11:36 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14752	     12	   1780	  16544	   40a0	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+16:15:54 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:136:63: error: subscripted value is neither array nor pointer nor vector
+  136 |                         ADC_temp_read = HAL_ADC_GetValue(&hadc[1]);
+      |                                                               ^
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:16:00 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14752	     12	   1780	  16544	   40a0	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+16:17:19 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f0xx_hal_msp.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f0xx_hal_msp.d" -MT"Core/Src/stm32f0xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f0xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f0xx_it.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f0xx_it.d" -MT"Core/Src/stm32f0xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f0xx_it.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14224	     12	   1780	  16016	   3e90	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+16:17:21 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14224	     12	   1780	  16016	   3e90	Ukol2.elf
+Finished building: default.size.stdout
+ 
+16:17:59 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14224	     12	   1780	  16016	   3e90	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+16:18:05 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14224	     12	   1780	  16016	   3e90	Ukol2.elf
+Finished building: default.size.stdout
+ 
+16:18:35 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14224	     12	   1780	  16016	   3e90	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+16:18:37 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14224	     12	   1780	  16016	   3e90	Ukol2.elf
+Finished building: default.size.stdout
+ 
+16:19:13 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14224	     12	   1780	  16016	   3e90	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+16:20:20 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14224	     12	   1780	  16016	   3e90	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+16:20:29 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14224	     12	   1780	  16016	   3e90	Ukol2.elf
+Finished building: default.size.stdout
+ 
+16:27:51 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f0xx_hal_msp.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f0xx_hal_msp.d" -MT"Core/Src/stm32f0xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f0xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f0xx_it.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f0xx_it.d" -MT"Core/Src/stm32f0xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f0xx_it.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14788	     12	   1788	  16588	   40cc	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+16:29:16 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14788	     12	   1788	  16588	   40cc	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+16:29:19 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14788	     12	   1788	  16588	   40cc	Ukol2.elf
+Finished building: default.size.stdout
+ 
+16:31:14 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f0xx_hal_msp.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f0xx_hal_msp.d" -MT"Core/Src/stm32f0xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f0xx_hal_msp.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14720	     12	   1780	  16512	   4080	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+16:31:17 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14720	     12	   1780	  16512	   4080	Ukol2.elf
+Finished building: default.size.stdout
+ 
+16:32:49 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14716	     12	   1780	  16508	   407c	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+16:32:52 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14716	     12	   1780	  16508	   407c	Ukol2.elf
+Finished building: default.size.stdout
+ 
+16:35:13 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14732	     12	   1780	  16524	   408c	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+16:35:34 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:150:56: error: expected ')' before ';' token
+  150 |                         HAL_Delay(delay = HAL_GetTick(););
+      |                                  ~                     ^
+      |                                                        )
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:36:13 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14688	     12	   1780	  16480	   4060	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+16:36:16 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14688	     12	   1780	  16480	   4060	Ukol2.elf
+Finished building: default.size.stdout
+ 
+16:36:54 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14680	     12	   1780	  16472	   4058	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+16:36:56 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14680	     12	   1780	  16472	   4058	Ukol2.elf
+Finished building: default.size.stdout
+ 
+16:38:35 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14684	     12	   1788	  16484	   4064	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+16:38:46 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14684	     12	   1788	  16484	   4064	Ukol2.elf
+Finished building: default.size.stdout
+ 
+16:39:37 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ukol2.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Temp\240612\MKS2024\Ukol2\Ukol2\STM32F030R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ukol2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ukol2.elf
+ 
+arm-none-eabi-size  Ukol2.elf 
+arm-none-eabi-objdump -h -S Ukol2.elf  > "Ukol2.list"
+   text	   data	    bss	    dec	    hex	filename
+  14696	     12	   1788	  16496	   4070	Ukol2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ukol2.list
+ 
+16:39:39 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14696	     12	   1788	  16496	   4070	Ukol2.elf
+Finished building: default.size.stdout
+ 

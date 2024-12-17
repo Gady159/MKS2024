@@ -1,0 +1,5 @@
+../Core/Src/sct.c:76:6:sct_init	8	static
+../Core/Src/sct.c:82:6:sct_led	24	static
+../Core/Src/sct.c:104:6:sct_value	32	static
+../Core/Src/sct.c:133:6:sct_bargraph	24	static
+../Core/Src/sct.c:142:6:sct_universal_bargraph	24	static

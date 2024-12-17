@@ -1,0 +1,10 @@
+16:39:39 **** Incremental Build of configuration Debug for project Ukol2 ****
+make -j4 all 
+arm-none-eabi-size  Ukol2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14696	     12	   1788	  16496	   4070	Ukol2.elf
+Finished building: default.size.stdout
+ 
+
+16:39:40 Build Finished. 0 errors, 0 warnings. (took 470ms)
+
